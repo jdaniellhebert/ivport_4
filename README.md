@@ -9,6 +9,6 @@ $ flash --hostname <unique-rpi-hostname> --ssid <Your-Wifi-SID> --password <Your
 # WARNING: flash will prompt you to double check the SD card disk #, take care.
 
 # Example:  
-$ flash --hostname v2c1 --ssid "58 Eero" --password aubinriopumpernickel https://github.com/hypriot/image-builder-rpi/releases/download/v1.1.1/hypriotos-rpi-v1.1.1.img.zip
+$ flash --hostname cam1 --ssid "58 Eero" --password aubinriopumpernickel https://downloads.raspberrypi.org/raspbian_lite_latest
 
 when prompted for password: type in password of machine you are doing this build on.
