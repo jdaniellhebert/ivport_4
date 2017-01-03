@@ -48,7 +48,7 @@ sudo halt # wait 10 seconds and then unplug and plug back in
 * When you power up or reboot your Pi you can check the i2c module is running by using the following commands:
 ```
 $ lsmod | grep i2c_  #  If it lists “i2c_bcm2708” then the module is running.
-$ $ sudo i2cdetect -y 1
+$ sudo i2cdetect -y 1
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- --
 10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -62,11 +62,33 @@ This result shows one device connected and its address is 0x20 (32 in decimal).
 ```
 #### Install IVport
 ```
-$ sudo apt-get install git
-$ git clone https://github.com/ivmech/ivport-v2.git
-$ sudo apt-get install python-smbus
-```
+$ sudo apt-get install git                              # git may not yet be installed
+$ git clone https://github.com/ivmech/ivport-v2.git     # clone ivport v2
+$ sudo apt-get install python-smbus                     # in case this is not installed
 
+$ sudo apt-get remove python-picamera                   # uninstall picamera because IVport v2 updates this
+$ sudo pip uninstall picamera
+```
+#### Usage
+```
+$ cd ivport-v2
+$ python init_ivport.py
+
+$ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: 10 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
+70: 70 -- -- -- -- -- -- --
+#  You should get both 0x70 and 0x64 as addresses of respectively ivport v2 and camera module v2.
+$ vcgencmd get_camera
+supported=1 detected=1
+
+```
 
 #### Links
 * https://github.com/hypriot/flash
