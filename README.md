@@ -41,8 +41,27 @@ $ sudo raspi-config  # change SSH default to on & change the rpi password.
 $ sudo apt-get update
 $ sudo apt-get install -y python-smbus i2c-tools
 ```
+```
+sudo halt # wait 10 seconds and then unplug and plug back in
+```
+* When you power up or reboot your Pi you can check the i2c module is running by using the following commands:
+```
+$ lsmod | grep i2c_  #  If it lists “i2c_bcm2708” then the module is running.
+$ $ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: 20 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+This result shows one device connected and its address is 0x20 (32 in decimal).
+```
 
 #### Links
 * https://github.com/hypriot/flash
 * https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/
 * https://www.arrow.com/en/research-and-events/articles/headless-setup-for-your-raspberry-pi-3
+* http://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
