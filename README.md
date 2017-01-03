@@ -29,7 +29,7 @@ The boot partition on a Pi should be accessible from any machine with an SD card
 In MacOS bash shell:
 ```
 $ cd /Volumes/boot
-$ touch shh
+$ touch ssh
 ```
 Eject flash drive and plug into RPI.  Restart RPI
 ```
