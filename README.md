@@ -60,6 +60,13 @@ $ $ sudo i2cdetect -y 1
 70: -- -- -- -- -- -- -- --
 This result shows one device connected and its address is 0x20 (32 in decimal).
 ```
+#### Install IVport
+```
+$ sudo apt-get install git
+$ git clone https://github.com/ivmech/ivport-v2.git
+$ sudo apt-get install python-smbus
+```
+
 
 #### Links
 * https://github.com/hypriot/flash
