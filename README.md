@@ -22,6 +22,6 @@ $ flash --hostname <unique-rpi-hostname> --ssid <Your-Wifi-SID> --password <Your
 $ flash --hostname cam1 --ssid "58 Eero" --password aubinriopumpernickel https://downloads.raspberrypi.org/raspbian_lite_latest
 
 when prompted for password: type in password of machine you are doing this build on.
-
+```
 #### Links
 * https://github.com/hypriot/flash  
