@@ -23,5 +23,10 @@ $ flash --hostname cam1 --ssid "58 Eero" --password aubinriopumpernickel https:/
 
 when prompted for password: type in password of machine you are doing this build on.
 ```
-#### Links
+#### Enable SSH for initial boot from SD card
+The boot partition on a Pi should be accessible from any machine with an SD card reader, on Windows, Mac, or Linux. If you want to enable SSH, all you need to do is to put a file called ssh in the /boot/ directory. The contents of the file don’t matter: it can contain any text you like, or even nothing at all. When the Pi boots, it looks for this file; if it finds it, it enables SSH and then deletes the file.  On first boot run raspi-config to enable SSH.
+'''
+$ sudo raspi-config
+'''
+
 * https://github.com/hypriot/flash  
