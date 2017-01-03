@@ -20,17 +20,16 @@ network={
 $ cd /Volumes/boot
 $ touch ssh
 ```
-* Both files will be deleted on first boot after they are used.
+* Both the ssh file and the wpi_supplicant.conf file will be deleted on first boot after they are used.
 
-In MacOS bash shell:
-
-Eject flash drive and plug into RPI.  Restart RPI
+#### Boot RPI with SD card
+* Run "My Net" application to find IP address of RPI.
+* Then SSH to pi@<IP address>
 ```
-# In MacOS run My Net application (or equivalent) to find IP address.  SSH to IP address of RPI
-$ $ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<IP address>
-$ password: raspberry
-
-# Once connected to RPI
+$ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<IP address> # password: raspberry
+```
+* Once connected to RPI
+```
 $ sudo raspi-config  # change SSH default to on & change the rpi password.
 ```
 
