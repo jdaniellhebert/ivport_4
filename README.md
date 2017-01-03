@@ -28,7 +28,7 @@ $ touch ssh
 ```
 $ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<IP address> # password: raspberry
 ```
-#### Configure I2C bus
+#### Configure RPI
 * Once connected to RPI use raspi-config to change:
  * expand filesystem
  * default SSH on
@@ -37,7 +37,7 @@ $ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<IP address
 ```
 $ sudo raspi-config  # change SSH default to on & change the rpi password.
 ```
-* Update RPI
+#### Enable I2C
 ```
 $ sudo apt-get update
 $ sudo apt-get install -y python-smbus i2c-tools
