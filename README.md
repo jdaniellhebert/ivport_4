@@ -29,10 +29,10 @@ $ touch ssh
 $ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<IP address> # password: raspberry
 ```
 * Once connected to RPI use raspi-config to change:
-** expand filesystem
-** default SSH on
-** enable camera
-** enable I2C
+ * expand filesystem
+ * default SSH on
+ * enable camera
+ * enable I2C
 ```
 $ sudo raspi-config  # change SSH default to on & change the rpi password.
 ```
