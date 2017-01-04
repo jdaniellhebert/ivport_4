@@ -95,6 +95,8 @@ $ sudo i2cdetect -y 1
 $ vcgencmd get_camera
 supported=1 detected=1
 
+# to run
+$ python test_ivport_quad.py
 ```
 
 #### Links
