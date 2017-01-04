@@ -69,6 +69,12 @@ $ sudo apt-get install python-smbus                     # in case this is not in
 $ sudo apt-get remove python-picamera                   # uninstall picamera because IVport v2 updates this
 $ sudo apt-get install python-pip                       # install pip
 $ sudo pip uninstall picamera
+
+$ sudo apt-get update
+$ sudo apt-get install rpi-update
+$ sudo apt-get upgrade                                   # you may have to use the switch:  --fix-missing
+
+
 ```
 #### Usage
 ```
