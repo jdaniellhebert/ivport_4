@@ -100,7 +100,6 @@ $ python test_ivport_quad.py
 ```
 
 #### Links
-* https://github.com/hypriot/flash
 * https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/
 * https://www.arrow.com/en/research-and-events/articles/headless-setup-for-your-raspberry-pi-3
 * http://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
