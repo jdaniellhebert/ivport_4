@@ -71,10 +71,10 @@ $ sudo apt-get install python-pip                       # install pip
 $ sudo pip uninstall picamera
 
 $ sudo apt-get update
-$ sudo apt-get install rpi-update
 $ sudo apt-get upgrade                                   # you may have to use the switch:  --fix-missing
-
-
+$ sudo apt-get dist-upgrade
+$ sudo apt-get install rpi-update
+$ sudo rpi-update                                        # update firmware
 ```
 #### Usage
 ```
