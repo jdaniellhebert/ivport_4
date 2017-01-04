@@ -152,5 +152,3 @@ class IVPort():
     def close(self):
         self.camera_change(1)
         if self.is_opened: self.picam.close()
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
