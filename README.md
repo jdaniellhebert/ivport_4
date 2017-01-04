@@ -67,6 +67,7 @@ $ git clone https://github.com/ivmech/ivport-v2.git     # clone ivport v2
 $ sudo apt-get install python-smbus                     # in case this is not installed
 
 $ sudo apt-get remove python-picamera                   # uninstall picamera because IVport v2 updates this
+$ sudo apt-get install python-pip                       # install pip
 $ sudo pip uninstall picamera
 ```
 #### Usage
