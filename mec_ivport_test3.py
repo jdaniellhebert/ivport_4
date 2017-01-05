@@ -4,9 +4,9 @@ import IIC
 import RPi.GPIO as gp
 
 iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x01))
-iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
+# iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
 iviic_A.write_control_register((0x01))                # default
-iviic_B.write_control_register((0x01))                # default
+# iviic_B.write_control_register((0x01))                # default
 
 
 gp.setwarnings(False)
