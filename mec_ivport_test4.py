@@ -6,7 +6,7 @@ import IIC
 import RPi.GPIO as gp
 
 iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x01))
-iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
+# iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
 iviic_A.write_control_register((0x01))                # default
 #iviic_B.write_control_register((0x01))                # default
 
@@ -29,6 +29,8 @@ gp.output(16, True)
 gp.output(7, False)
 gp.output(11, True)
 gp.output(12, True)
+
+first_time = True
 
 c = ''
 
@@ -59,6 +61,10 @@ while c != 'q':
         gp.output(11, True)
         gp.output(12, False)
         # Turn on Camera 1 on board B
+        if first_time:
+            iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
+        else:
+            first_time = False
         iviic_B.write_control_register((0x01))
         gp.output(7, False)
         gp.output(15, False)
@@ -70,6 +76,10 @@ while c != 'q':
         gp.output(11, True)
         gp.output(12, False)
         # Turn on Camera 2 on board B
+        if first_time:
+            iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
+        else:
+            first_time = False
         iviic_B.write_control_register((0x02))
         gp.output(7, True)
         gp.output(15, False)
@@ -80,6 +90,10 @@ while c != 'q':
         gp.output(11, True)
         gp.output(12, False)
         # Turn on Camera 3 on board B
+        if first_time:
+            iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
+        else:
+            first_time = False
         iviic_B.write_control_register((0x04))
         gp.output(7, False)
         gp.output(15, True)
