@@ -3,8 +3,11 @@
 import IIC
 import RPi.GPIO as gp
 
-iviic = IIC.IIC(addr=(0x70), bus_enable =(0x01))
-iviic.write_control_register((0x01))                # default
+iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x01))
+iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
+iviic_A.write_control_register((0x01))                # default
+iviic_B.write_control_register((0x01))                # default
+
 
 gp.setwarnings(False)
 gp.setmode(gp.BOARD)
@@ -30,7 +33,7 @@ c = ''
 while c != 'q':
     c = raw_input("Enter Selection (q for quit):")
     if c == '1':
-        iviic.write_control_register((0x01))
+        iviic_A.write_control_register((0x01))
         # Turn off Cameras on board B
         gp.output(7, False)
         gp.output(15, True)
@@ -40,7 +43,7 @@ while c != 'q':
         gp.output(11, False)
         gp.output(12, True)
     elif c == '2':
-        iviic.write_control_register((0x02))
+        iviic_A.write_control_register((0x02))
         # Turn off Cameras on board B
         gp.output(7, False)
         gp.output(15, True)
@@ -50,7 +53,7 @@ while c != 'q':
         gp.output(11, False)
         gp.output(12, True)
     elif c == '3':
-        iviic.write_control_register((0x04))
+        iviic_A.write_control_register((0x04))
         # Turn off Cameras on board B
         gp.output(7, False)
         gp.output(15, True)
@@ -60,7 +63,7 @@ while c != 'q':
         gp.output(11, True)
         gp.output(12, False)
     elif c == '4':
-        iviic.write_control_register((0x08))
+        iviic_A.write_control_register((0x08))
         # Turn off Cameras on board B
         gp.output(7, False)
         gp.output(15, True)
@@ -70,7 +73,7 @@ while c != 'q':
         gp.output(11, True)
         gp.output(12, False)
     elif c == '5':
-        iviic.write_control_register((0x01))
+        iviic_B.write_control_register((0x01))
         # Turn off Cameras on board A
         gp.output(7, False)
         gp.output(11, True)
@@ -80,7 +83,7 @@ while c != 'q':
         gp.output(15, False)
         gp.output(16, True)
     elif c == '6':
-        iviic.write_control_register((0x01))
+        iviic_B.write_control_register((0x01))
         # Turn off Cameras on board A
         gp.output(7, False)
         gp.output(11, True)
