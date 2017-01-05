@@ -93,7 +93,7 @@ while c != 'q':
         gp.output(15, False)
         gp.output(16, True)
     elif c == '7':
-        iviic_B.write_control_register((0x08))
+        iviic_B.write_control_register((0x06))
         # Turn off Cameras on board A
         gp.output(7, False)
         gp.output(11, True)
