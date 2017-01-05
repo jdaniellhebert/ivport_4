@@ -33,8 +33,8 @@ while c != 'q':
         iviic.write_control_register((0x01))
         # Turn off Cameras on board B
         gp.output(7, False)
-        gp.output(15, False)
-        gp.output(16, False)
+        gp.output(15, True)
+        gp.output(16, True)
         # Turn on Camera 1 on board A
         gp.output(7, False)
         gp.output(11, False)
@@ -43,8 +43,8 @@ while c != 'q':
         iviic.write_control_register((0x02))
         # Turn off Cameras on board B
         gp.output(7, False)
-        gp.output(15, False)
-        gp.output(16, False)
+        gp.output(15, True)
+        gp.output(16, True)
         # Turn on Camera 2 on board A
         gp.output(7, True)
         gp.output(11, False)
@@ -53,8 +53,8 @@ while c != 'q':
         iviic.write_control_register((0x04))
         # Turn off Cameras on board B
         gp.output(7, False)
-        gp.output(15, False)
-        gp.output(16, False)
+        gp.output(15, True)
+        gp.output(16, True)
          # Turn on Camera 3 on board A
         gp.output(7, False)
         gp.output(11, True)
@@ -63,8 +63,8 @@ while c != 'q':
         iviic.write_control_register((0x08))
         # Turn off Cameras on board B
         gp.output(7, False)
-        gp.output(15, False)
-        gp.output(16, False)
+        gp.output(15, True)
+        gp.output(16, True)
          # Turn on Camera 4 on board A
         gp.output(7, True)
         gp.output(11, True)
@@ -73,8 +73,8 @@ while c != 'q':
         iviic.write_control_register((0x01))
         # Turn off Cameras on board A
         gp.output(7, False)
-        gp.output(11, False)
-        gp.output(12, False)
+        gp.output(11, True)
+        gp.output(12, True)
         # Turn on Camera 1 on board A
         gp.output(7, False)
         gp.output(15, False)
@@ -83,8 +83,8 @@ while c != 'q':
         iviic.write_control_register((0x01))
         # Turn off Cameras on board A
         gp.output(7, False)
-        gp.output(11, False)
-        gp.output(12, False)
+        gp.output(11, True)
+        gp.output(12, True)
         # Turn on Camera 1 on board A
         gp.output(7, False)
         gp.output(15, False)
