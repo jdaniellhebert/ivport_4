@@ -3,9 +3,9 @@
 import IIC
 import RPi.GPIO as gp
 
-# iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x01))
+iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x01))
 iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x01))
-# iviic_A.write_control_register((0x01))                # default
+iviic_A.write_control_register((0x01))                # default
 iviic_B.write_control_register((0x01))                # default
 
 
@@ -84,6 +84,26 @@ while c != 'q':
         gp.output(16, True)
     elif c == '6':
         iviic_B.write_control_register((0x02))
+        # Turn off Cameras on board A
+        gp.output(7, False)
+        gp.output(11, True)
+        gp.output(12, True)
+        # Turn on Camera 1 on board A
+        gp.output(7, True)
+        gp.output(15, False)
+        gp.output(16, True)
+    elif c == '7':
+        iviic_B.write_control_register((0x08))
+        # Turn off Cameras on board A
+        gp.output(7, False)
+        gp.output(11, True)
+        gp.output(12, True)
+        # Turn on Camera 1 on board A
+        gp.output(7, True)
+        gp.output(15, False)
+        gp.output(16, True)
+    elif c == '8':
+        iviic_B.write_control_register((0x08))
         # Turn off Cameras on board A
         gp.output(7, False)
         gp.output(11, True)
