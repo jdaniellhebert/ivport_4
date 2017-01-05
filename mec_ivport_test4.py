@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Goal with this test is to try N-1 configuration.  output of board B runs into Camera 4 on board A. So 3x cameras on each board.
+# Removed the cluster connector to prevent the conflict.
 
 import IIC
 import RPi.GPIO as gp
