@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# This is the hypothetical correct test program.  It failed.  Probably due to board design error.  IIC muxs in conflict.
+# This is the hypothetical correct test program.  It failed.  IIC muxs in conflict on A&B.
 
 import IIC
 import RPi.GPIO as gp
