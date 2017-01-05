@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# This is the hypothetical correct test program.  It failed.  Probably due to board design error.  IIC muxs in conflict.
 
 import IIC
 import RPi.GPIO as gp
