@@ -89,7 +89,7 @@ while c != 'q':
         gp.output(11, True)
         gp.output(12, True)
         # Turn on Camera 1 on board A
-        gp.output(7, False)
+        gp.output(7, True)
         gp.output(15, False)
         gp.output(16, True)
     else:
