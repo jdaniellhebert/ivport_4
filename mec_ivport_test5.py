@@ -19,7 +19,7 @@ gp.setup(16, gp.OUT)                                                            
 iviic_A.write_control_register((0x00))                                              # Disable IIC mux board A
 # gp.output(11, True); gp.output(12, True); gp.output(7, False);                      # Turn off Cameras on board A
 
-iviic_B.write_control_register((0x00))                                              # Disable IIC mux board B
+# iviic_B.write_control_register((0x00))                                              # Disable IIC mux board B
 # gp.output(15, True); gp.output(16, True); gp.output(7, False);                      # Turn off Cameras on board B
 
 c = ''
