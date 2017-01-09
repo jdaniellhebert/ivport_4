@@ -7,14 +7,14 @@ import RPi.GPIO as gp
 iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x00))                                  # IIC port A defined and disabled
 iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x00))                                  # IIC port B defined and disabled
 
+gp.setwarnings(False)
+gp.setmode(gp.BOARD)
+
 gp.setup(7, gp.OUT)                                                                 # Selection for all Jumpers
 gp.setup(11, gp.OUT)                                                                # Jumper A -- Enable 1
 gp.setup(12, gp.OUT)                                                                # Jumper A -- Enable 2 
 gp.setup(15, gp.OUT)                                                                # Jumper B -- Enable 1
 gp.setup(16, gp.OUT)                                                                # Jumper B -- Enable 2
-
-gp.setwarnings(False)
-gp.setmode(gp.BOARD)
 
 ivicc_A.write_control_register((0x00))                                              # Disable IIC mux board A
 gp.output(11, True); gp.output(12, True); gp.output(7, False);                      # Turn off Cameras on board A
