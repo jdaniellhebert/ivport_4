@@ -5,7 +5,7 @@ import IIC
 import RPi.GPIO as gp
 
 iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x00))                                  # IIC port A defined and disabled
-iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x00))                                  # IIC port B defined and disabled
+# iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x00))                                  # IIC port B defined and disabled
 
 gp.setwarnings(False)
 gp.setmode(gp.BOARD)
