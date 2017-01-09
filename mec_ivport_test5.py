@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # Original configuration switch alternate disabling of mux on boards
+#
 
 import IIC
 import RPi.GPIO as gp
