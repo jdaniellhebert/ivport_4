@@ -14,14 +14,14 @@ gp.setmode(gp.BOARD)
 gp.setup(7, gp.OUT)                                                                 # Selection for all Jumpers
 gp.setup(11, gp.OUT)                                                                # Jumper A -- Enable 1
 gp.setup(12, gp.OUT)                                                                # Jumper A -- Enable 2 
-# gp.setup(15, gp.OUT)                                                                # Jumper B -- Enable 1
-# gp.setup(16, gp.OUT)                                                                # Jumper B -- Enable 2
+gp.setup(15, gp.OUT)                                                                # Jumper B -- Enable 1
+gp.setup(16, gp.OUT)                                                                # Jumper B -- Enable 2
 
 iviic_A.write_control_register((0x00))                                              # Disable IIC mux board A
 gp.output(11, True); gp.output(12, True); gp.output(7, False);                      # Turn off Cameras on board A
 
 # iviic_B.write_control_register((0x00))                                              # Disable IIC mux board B
-# gp.output(15, True); gp.output(16, True); gp.output(7, False);                      # Turn off Cameras on board B
+gp.output(15, True); gp.output(16, True); gp.output(7, False);                      # Turn off Cameras on board B
 
 c = ''
 
