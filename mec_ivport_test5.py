@@ -49,30 +49,30 @@ while c != 'q':
         gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
         # Enable board A AND enable camera 3
         iviic_A.write_control_register((0x04))                                      # Mux3(A) Enabled
-        gp.output(11, True); gp.output(12, False); gp.output(7, False);              # EN1(A) = True; EN2(A)=False; SEL = True
+        gp.output(11, True); gp.output(12, False); gp.output(7, False);              # EN1(A) = True; EN2(A)=False; SEL = False
         
     elif c == '4':
         # Disable board B
         iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
         gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
-        # Enable board A AND enable camera 1
+        # Enable board A AND enable camera 4
         iviic_A.write_control_register((0x08))                                      # Mux0(A) Enabled
-        gp.output(11, True); gp.output(12, False); gp.output(7, True);             # EN1(A) = True; EN2(A)=False; SEL = False
+        gp.output(11, True); gp.output(12, False); gp.output(7, True);             # EN1(A) = True; EN2(A)=False; SEL = True
         
     elif c == '5':
         # Disable board A
         iviic_A.write_control_register((0x00))                                      # Disable IIC mux board A
         gp.output(11, True); gp.output(12, True); gp.output(7, False);              # Turn off Cameras on board A
-        # Enable board A AND enable camera 1
+        # Enable board B AND enable camera 5
         iviic_B.write_control_register((0x01))                                      # Mux1(B) Enabled
         gp.output(15, False); gp.output(16, True); gp.output(7, False);             # EN1(B) = False; EN2(B)=True; SEL = False
         
     elif c == '6':
-        # Disable board B
+        # Disable board A
         iviic_A.write_control_register((0x00))                                      # Disable IIC mux board A
         gp.output(11, True); gp.output(12, True); gp.output(7, False);              # Turn off Cameras on board A
-        # Enable board A AND enable camera 2
-        iviic_A.write_control_register((0x02))                                      # Mux2(B) Enabled
+        # Enable board B AND enable camera 6
+        iviic_B.write_control_register((0x02))                                      # Mux2(B) Enabled
         gp.output(15, False); gp.output(16, True); gp.output(7, True);              # EN1(B) = False; EN2(B)=True; SEL = True
 
     continue
