@@ -49,7 +49,7 @@ while c != 'q':
 #        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
         # Enable board A AND enable camera 3
         iviic_A.write_control_register((0x04))                                      # Mux3(A) Enabled
-        gp.output(11, True); gp.output(12, False); gp.output(7, True);              # EN1(A) = True; EN2(A)=False; SEL = True
+        gp.output(11, True); gp.output(12, False); gp.output(7, False);              # EN1(A) = True; EN2(A)=False; SEL = True
         
     elif c == '4':
         # Disable board B
@@ -57,7 +57,7 @@ while c != 'q':
 #        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
         # Enable board A AND enable camera 1
         iviic_A.write_control_register((0x08))                                      # Mux0(A) Enabled
-        gp.output(11, True); gp.output(12, False); gp.output(7, False);             # EN1(A) = True; EN2(A)=False; SEL = False
+        gp.output(11, True); gp.output(12, False); gp.output(7, True);             # EN1(A) = True; EN2(A)=False; SEL = False
     """
     elif c == '5':
         # Disable board A
