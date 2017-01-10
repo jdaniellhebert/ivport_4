@@ -30,7 +30,7 @@ while c != 'q':
     if c == '1':
         # Disable board B
         iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
-        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
+        gp.output(15, False); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
         # Enable board A AND enable camera 1
         iviic_A.write_control_register((0x01))                                      # Mux1(A) Enabled
         gp.output(11, False); gp.output(12, True); gp.output(7, False);             # EN1(A) = False; EN2(A)=True; SEL = False
@@ -62,7 +62,7 @@ while c != 'q':
     elif c == '5':
         # Disable board A
         iviic_A.write_control_register((0x00))                                      # Disable IIC mux board A
-        gp.output(11, True); gp.output(12, True); gp.output(7, False);              # Turn off Cameras on board A
+        gp.output(11, False); gp.output(12, True); gp.output(7, False);              # Turn off Cameras on board A
         # Enable board B AND enable camera 5
         iviic_B.write_control_register((0x01))                                      # Mux1(B) Enabled
         gp.output(15, False); gp.output(16, True); gp.output(7, False);             # EN1(B) = False; EN2(B)=True; SEL = False
