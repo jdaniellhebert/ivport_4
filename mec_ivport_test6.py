@@ -58,7 +58,7 @@ while c != 'q':
         # Enable board A AND enable camera 1
         iviic_A.write_control_register((0x08))                                      # Mux0(A) Enabled
         gp.output(11, True); gp.output(12, False); gp.output(7, False);             # EN1(A) = True; EN2(A)=False; SEL = False
- """
+    """
     elif c == '5':
         # Disable board A
         iviic_A.write_control_register((0x00))                                      # Disable IIC mux board A
@@ -74,7 +74,7 @@ while c != 'q':
         # Enable board A AND enable camera 2
         iviic_A.write_control_register((0x02))                                      # Mux2(B) Enabled
         gp.output(15, False); gp.output(16, True); gp.output(7, True);              # EN1(B) = False; EN2(B)=True; SEL = Tru
-"""
+    """
     continue
 
 iviic_B.write_control_register((0x00))                                              # Disable IIC mux board B
