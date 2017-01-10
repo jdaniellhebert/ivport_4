@@ -6,7 +6,7 @@ import IIC
 import RPi.GPIO as gp
 
 iviic_A = IIC.IIC(addr=(0x70), bus_enable =(0x00))                                  # IIC port A defined and disabled
-# iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x00))                                  # IIC port B defined and disabled
+iviic_B = IIC.IIC(addr=(0x71), bus_enable =(0x00))                                  # IIC port B defined and disabled
 
 gp.setwarnings(False)
 gp.setmode(gp.BOARD)
@@ -18,10 +18,10 @@ gp.setup(15, gp.OUT)                                                            
 gp.setup(16, gp.OUT)                                                                # Jumper B -- Enable 2
 
 iviic_A.write_control_register((0x00))                                              # Disable IIC mux board A
-# gp.output(11, True); gp.output(12, True); gp.output(7, False);                      # Turn off Cameras on board A
+gp.output(11, True); gp.output(12, True); gp.output(7, False);                      # Turn off Cameras on board A
 
-# iviic_B.write_control_register((0x00))                                              # Disable IIC mux board B
-# gp.output(15, True); gp.output(16, True); gp.output(7, False);                      # Turn off Cameras on board B
+iviic_B.write_control_register((0x00))                                              # Disable IIC mux board B
+gp.output(15, True); gp.output(16, True); gp.output(7, False);                      # Turn off Cameras on board B
 
 c = ''
 
@@ -29,7 +29,7 @@ while c != 'q':
     c = raw_input("Enter Selection (q for quit):")
     if c == '1':
         # Disable board B
-#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
+        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
         gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
         # Enable board A AND enable camera 1
         iviic_A.write_control_register((0x01))                                      # Mux1(A) Enabled
