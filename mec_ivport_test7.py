@@ -34,6 +34,32 @@ while c != 'q':
         # Enable board A AND enable camera 1
         iviic_A.write_control_register((0x01))                                      # Mux1(A) Enabled
         gp.output(11, False); gp.output(12, True); gp.output(7, False);             # EN1(A) = False; EN2(A)=True; SEL = False
+        
+    """        
+    elif c == '2':
+        # Disable board B
+#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
+#        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
+        # Enable board A AND enable camera 2
+        iviic_A.write_control_register((0x02))                                      # Mux2(A) Enabled
+        gp.output(11, False); gp.output(12, True); gp.output(7, True);              # EN1(A) = False; EN2(A)=True; SEL = True
+        
+    elif c == '3':
+        # Disable board B
+#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
+#        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
+        # Enable board A AND enable camera 3
+        iviic_A.write_control_register((0x04))                                      # Mux3(A) Enabled
+        gp.output(11, True); gp.output(12, False); gp.output(7, False);              # EN1(A) = True; EN2(A)=False; SEL = True
+        
+    elif c == '4':
+        # Disable board B
+#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
+#        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
+        # Enable board A AND enable camera 1
+        iviic_A.write_control_register((0x08))                                      # Mux0(A) Enabled
+        gp.output(11, True); gp.output(12, False); gp.output(7, True);             # EN1(A) = True; EN2(A)=False; SEL = False
+    """
     
     elif c == '5':
         # Disable board A
@@ -59,28 +85,4 @@ gp.output(15, True); gp.output(16, True); gp.output(7, False);                  
 iviic_A.write_control_register((0x00))                                              # Disable IIC mux board A
 gp.output(11, True); gp.output(12, True); gp.output(7, False);                      # Turn off Cameras on board A
 
- """        
-    elif c == '2':
-        # Disable board B
-#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
-#        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
-        # Enable board A AND enable camera 2
-        iviic_A.write_control_register((0x02))                                      # Mux2(A) Enabled
-        gp.output(11, False); gp.output(12, True); gp.output(7, True);              # EN1(A) = False; EN2(A)=True; SEL = True
-        
-    elif c == '3':
-        # Disable board B
-#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
-#        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
-        # Enable board A AND enable camera 3
-        iviic_A.write_control_register((0x04))                                      # Mux3(A) Enabled
-        gp.output(11, True); gp.output(12, False); gp.output(7, False);              # EN1(A) = True; EN2(A)=False; SEL = True
-        
-    elif c == '4':
-        # Disable board B
-#        iviic_B.write_control_register((0x00))                                      # Disable IIC mux board B
-#        gp.output(15, True); gp.output(16, True); gp.output(7, False);              # Turn off Cameras on board B
-        # Enable board A AND enable camera 1
-        iviic_A.write_control_register((0x08))                                      # Mux0(A) Enabled
-        gp.output(11, True); gp.output(12, False); gp.output(7, True);             # EN1(A) = True; EN2(A)=False; SEL = False
-    """
+    
