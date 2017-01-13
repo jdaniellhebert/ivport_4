@@ -22,7 +22,7 @@
   * Board 2 works without board 1
   
 #### Status
-* The multi-board configuration does not work. The analog mux signals are currupted for the board that the input connector is on. The singals are intact on second board output connector.
+* The multi-board configuration does not work. The analog mux signals are corrupted for the board that the input connector is on. The singals are intact on second board output connector.
 * After reverse engineered schematic (see .pdf docs in repo), there do not seem to be any missing control lines that would switch between board input connectors.   
 * In prinicpal mec_ivport_test5.py should work as programmed and tested. The only difference between tests is electrical hardware configuration.
 * Conjecture for failure (not tested):  The difference between the two tests is electrically different because of the fanout of the second board over the cluster connector.  The signals are high speed and the line impedence is likely modified.  Other commenters have indicated that they are seeing intermittant errors.
