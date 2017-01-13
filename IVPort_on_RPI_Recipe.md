@@ -1,4 +1,4 @@
-# meccam2
+# Setting up IVPORT on RPI
 
 #### Copy Raspbian image to SD Card with Etcher Application (MacOS)
 * Download application:  https://etcher.io/
